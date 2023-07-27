@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> f.10 - exercicio 2 </title>
+</head>
+
+<body>
+	<input type="text" id="caixa1" value="">
+	<button onclick="mostratexto()"> Clica aqui </button> <br>
+	texto inserido:
+	<p id="texto1"></p>
+	
+	<script>
+	function mostrartexto() {
+		var x = document.getElementById("caixa1").value;
+		document.getElementById("texto1").innerHTML = x;
+	}
+	</script>
+</body>
+</html>

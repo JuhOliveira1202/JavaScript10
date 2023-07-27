@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> f.10 - exercicio 1 </title>
+</head>
+
+<body>
+	<form>
+		<label>Nome:</label> <br>
+		<input type="text" name="caixa_nome" id="caixa_nome"> <br>
+		
+		<label>Apelido:</label><br>
+		<input type="text" name="caixa_apelido" id="caixa_apelido"> <br>
+		
+		<label>Idade:</label> <br>
+		<input type="number" name="caixa_idade" id="caixa_idade">
+		<br> <br>
+		
+		<label>Género:</label><br>
+		<input type="radio" name="genero" value="homem"> Masculino
+		<input type="radio" name="genero" value="mulher"> Feminino
+		<br> <br>
+		
+		<label>Mensagem:</label><br>
+		<textarea name="message" id="caixa_mensagem" rows="5" cols="25">
+		</textarea>
+		<br>
+		<input name="botão1" type="button" id="botão1"
+			   value="Mostrar" onClick="Lerdados()">
+	</form>
+		
+	<hr align="left" width="300">
+	Nome: <label id="id_nome" >--</label>
+	<label id="id_apelido" > -- </label> <br>
+	Idade:
+	<label id="id_idade" > -- </label> <br>
+	Género:
+	<label id="id_genero" > -- </label> <br>
+	Mensagem: <br>
+	<label id="id_mensagem" > -- </label> 
+	
+	<script>
+		function Lerdados()
+		{
+			var nome = document.getElementById("caixa_nome").value;
+			var apelido = document.getElementById("caixa_apelido").value;
+			var idade = document.getElementById("caixa_idade").value;
+			var mensagem = document.getElementById("caixa_mensagem").value;
+			
+			document.getElementById("id_nome").innerHTML = nome;
+			document.getElementById("id_apelido").innerHTML = apelido;
+			document.getElementById("id_idade").innerHTML = idade;
+			document.getElementById("id_mensagem").innerHTML = mensagem;
+			
+			var arraygenero = document.getElementsByName("genero");
+			var generoativo;
+			for(var i = 0; i < arraygenero.length; i++)
+				{
+					if(arraygenero[i].checked)
+						generoativo = arraygenero[i].value;
+				}
+			document.getElementById("id_genero").innerHTML = generoativo;
+		} // fim função
+	</script>
+	
+</body>
+</html>
